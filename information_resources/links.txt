@@ -1,0 +1,23 @@
+https://www.ibm.com/developerworks/library/os-recommender1/
+https://en.wikipedia.org/wiki/Recommender_system
+https://en.wikipedia.org/wiki/Low-rank_approximation
+http://techblog.netflix.com/2012/06/netflix-recommendations-beyond-5-stars.html
+    - After one year, the "Progress Prize" was awarded
+        - Matrix Factorization (which the community generally called SVD, Singular Value Decomposition)
+        - Restricted Boltzmann Machines (RBM)
+        - 8.43% increase
+    - Originally use Cinematch
+    - Netflix use case is a bit different from ours. 
+        - Significantly more date (billions of users, thousands of shows/movies)
+        - Designed for family use
+            - Provides recommendations for multiple people, each with their own personal preferences
+    - Ranking
+        - f(u,v) = w1 * p(v) + w2 * r(u,v) + b
+            - f = ranking
+            - u = user
+            - v = video
+            - p(v) = popularity
+            - r(u,v) = predicted rating
+            - b = bias
+https://www.coursera.org/learn/machine-learning/lecture/uG59z/content-based-recommendations
+http://www.cs.carleton.edu/cs_comps/0607/recommend/recommender/itembased.html
