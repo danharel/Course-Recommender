@@ -21,3 +21,8 @@ http://techblog.netflix.com/2012/06/netflix-recommendations-beyond-5-stars.html
             - b = bias
 https://www.coursera.org/learn/machine-learning/lecture/uG59z/content-based-recommendations
 http://www.cs.carleton.edu/cs_comps/0607/recommend/recommender/itembased.html
+http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579
+http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-between-svd-and-pca
+http://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca
+http://sebastianraschka.com/Articles/2014_pca_step_by_step.html
+http://acsweb.ucsd.edu/~dklim/mf_presentation.pdf
