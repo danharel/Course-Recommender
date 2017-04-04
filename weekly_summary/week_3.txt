@@ -1,0 +1,14 @@
+Let's pretend we have an input matrix of length 100,000 x 200,000. Each row represents a movie, while each column represents a user. This matrix is far too large for comfort. 
+
+Ideally, instead of having one column represent a single user, we could have one column represent a particular "feature", or combination of features and have signficantly less values. 
+Let's say, for example, we have 40 features. Instead of having a single 100,000 x 200,000 matrix X, we have two matrices: 
+- 100,000 x 40 matrix U representing each movie's correlation to each feature.
+- 200,000 x 40 matrix V representing each user's correlation to each feature.
+If we use the 40 most "significant" features, then X ~= UV.
+
+A user's affinity for a particular movie is simply the dot product of the user's feature vector and the movie's feature vector. By calculating all of these and sorting them, we can determine the best "fits" for a user. Alternatively, by determining U and V, we can multiply them together to find X^, which provides approximate predictions for each user-movie pair.
+So all we need to do is find U and V.
+
+"Singular value decomposition is just a mathematical trick for finding those two smaller matrices which minimize the resulting approximation error--specifically the mean squared error (rather convenient!)." -http://sifter.org/~simon/journal/20061211.html
+
+http://sifter.org/~simon/journal/20061211.html
