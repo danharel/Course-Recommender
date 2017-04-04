@@ -1,0 +1,17 @@
+One approach to recommendation systems is collaborative filtering. This is a technique where recommendations are predicted for users based on ratings of "similar" users. 
+
+The definition of "similar" here is a bit vague. We can begin by generataing an m x n rating matrix A s.t. each row represents a course and each column represents a user. A matrix element i,j represents the rating that user j gave to movie j. We can now define the "similarity" between two users in a couple of different ways. One way is the root mean squared deviation. Another way is by calculating the angle between the two vectors.
+https://en.wikipedia.org/wiki/Root-mean-square_deviation
+http://www.wikihow.com/Find-the-Angle-Between-Two-Vectors
+By determining which users a particular user A is similar to, we can then calculate some heuristic to predict, based on their peers, what A might rate a course B.
+
+There are several case studies that are valuable to look at. I began by looking at Netflix, which has a very developed recommendation system. However, I came to find that Netflix is NOT the greatest point of reference for various reasons. 
+One of the biggest reasons is that Netflix has a much larger infrastructure that allows for experimentation and fine-tuning on a level that we cannot do. For example, if Netflix wanted to test a particular parameter, they could perform AB testing, and receive millions of data points to confirm or deny their hypothesis by the end of the day. We would only receive feedback at the end of the semester, after students have completed the courses that have been recommended to them. 
+Secondly, Netflix has far more data points to work with. According to their blog, "everything is a data point". This refers to the concept of "implicit data collection", in which the system gauges information about a user's preferences based on things such as searches and metadata (movie directors, amount watched, etc.). There is little to no real-time data that we can collect to perform an implicit data collection. However, it provides insight into the factr that there may be more to the system then just ratings. For example, if a user prefers a particular time or professor, then that may be helpful as well.
+Another valuable insight gained from the Netflix case study is the concept of "rank". Netflix has an equation that they calculate then sort in order to rank results. In particular, they weigh the popularity of a movie, weigh the user's predicted rank, then add them together to determine the "score" of a movie for a particular user. Something similar can be done here as well; we can weigh various different metrics that we deem valuable, then add them together in order to determine our final score.
+
+Our data is far more sparse. Netflix has millions of movies, but users have only seen maybe 15-20 movies max, whereas students will have taken ~30 out of ~50 CSE courses.
+
+Is rating alone sufficient? Is there a difference between CSE219 taught by McKenna v. CSE219 taught by Fodor? Time of day? Etc.
+
+Is there opportunity for generalization to other majors collaborating?
