@@ -26,3 +26,5 @@ http://math.stackexchange.com/questions/3869/what-is-the-intuitive-relationship-
 http://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca
 http://sebastianraschka.com/Articles/2014_pca_step_by_step.html
 http://acsweb.ucsd.edu/~dklim/mf_presentation.pdf
+http://setosa.io/ev/eigenvectors-and-eigenvalues/
+menugget.blogspot.de/2012/10/dineof-data-interpolating-empitical.html

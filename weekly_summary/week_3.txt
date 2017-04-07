@@ -12,3 +12,9 @@ So all we need to do is find U and V.
 "Singular value decomposition is just a mathematical trick for finding those two smaller matrices which minimize the resulting approximation error--specifically the mean squared error (rather convenient!)." -http://sifter.org/~simon/journal/20061211.html
 
 http://sifter.org/~simon/journal/20061211.html
+
+Methods for predicting a user's rating:
+- Find the most similar users, then use their ratings to predict the user's rating
+- Fill in all blanks in the matrix with an educated estimate. Perform partial SVD to find U^ and V^, then multiply them together to get A^, an approximation of each user's rating for each course.
+- "Netflix Try This At Home". Train each feature by following the gradiant on given values until convergence. This is an alternative way of approximating U^ and V^.
+- http://menugget.blogspot.de/2012/10/dineof-data-interpolating-empirical.html -- Fill all gaps with 0. Calculate RMSE between OG dataset and new data set (only on known values). Perform partial SVD with k = 1 and multiply U^ and V^. Calculate RMSE. Calculate change in RMSE. Increase k by 1. Repeat until RMSE converges or until you've performed "too many" iterations.
