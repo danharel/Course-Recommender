@@ -29,3 +29,4 @@ http://acsweb.ucsd.edu/~dklim/mf_presentation.pdf
 http://setosa.io/ev/eigenvectors-and-eigenvalues/
 menugget.blogspot.de/2012/10/dineof-data-interpolating-empitical.html
 https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/comjnl/30/3/10.1093/comjnl/30.3.268/2/300268.pdf?Expires=1491894250&Signature=FyKziAbRV9Yp57NEsM58IloYVMNflQFJ76OexLWexlLb383ucBIaIT7WCNA8HR1IrG30wZNUPgoX8F16aGA56DOQ8V0kn4lR5k8dCcabetScBZ0qmycZRQJ~Y7hNzVlEozvggDTsXBPK~i~2hDBoSkvoineidkm26xHBvydMnrvDqdCCWg0RyeZ0aA3mR6biuHgCYXDFnI9IBXIzxfQMzK4Q7Y7IaS5pmJRgkZiYzZ-AsHHHobsIQROeTQfffLa8-Y1ufGTl8o7Kp2JYCskxZE68gmWlvkkCoWR6Q1wRrNumm6aLmh35NTYutQwXdwJHIyN~K5DOTjvYhqphq~KcIQ__&Key-Pair-Id=APKAIUCZBIA4LVPAVW3Q
+http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4767324
