@@ -1,6 +1,6 @@
 import csv
 import os 
-import json
+import pickle
 
 import numpy as np
 import scipy.sparse as sparse
@@ -41,27 +41,29 @@ def get_score(grade):
         'F': 0.0
     }[grade]
 
-def get_data(format="matrix", samples=None):
+def get_data(format="matrix", grade_samples=None, user_samples=None):
     users = set()
     courses = set()
     grades = set()
 
-    if samples is not None:
-        sampleIndexes = {(sample[0],sample[1]) for sample in samples}
+    if grade_samples is not None and user_samples is not None:
+        raise ValueError("Only one of (grade_samples, user_samples) is allowed")
 
-    rating_list = []
+    sampleIndexes = None
+    if grade_samples is not None:
+        sampleIndexes = {(sample[0],sample[1]) for sample in grade_samples}
+    if user_samples is not None:
+        sampleIndexes = {(course_id, user_id) for user_id, user_data in user_samples.items() for course_id in user_data['samples_removed']}
 
     with open(data_path, 'rt') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for row in spamreader:
-            # print(', '.join(row))
             users.add(row[0])
             courses.add(row[1])
             grades.add(row[2])
 
     users = {k: v for v, k in enumerate(sorted(users))}
     courses = {k: v for v, k in enumerate(sorted(courses))}
-
 
     # This was used to get files containing the user-index and course-index
     # mappings for future reference
@@ -70,7 +72,7 @@ def get_data(format="matrix", samples=None):
     # with open('courses.json', 'w+') as f:
     #     json.dump(courses, f)
 
-
+    rating_list = []
     M = np.zeros((len(courses),len(users)))
     with open(data_path, 'rt') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -78,7 +80,7 @@ def get_data(format="matrix", samples=None):
             course_index = courses[row[1]]
             user_index = users[row[0]]
 
-            if samples is not None and (course_index,user_index) in sampleIndexes:
+            if sampleIndexes is not None and (course_index,user_index) in sampleIndexes:
                 continue
 
             M[course_index,user_index] = get_score(row[2])

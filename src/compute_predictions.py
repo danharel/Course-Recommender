@@ -188,7 +188,7 @@ def test_DINEOF():
 
 def test_EM():
     samples = read_samples()
-    M = get_data(format="COO", samples=samples)
+    M = get_data(format="COO", grade_samples=samples)
     ratings = maximization_iteration_zeroes(M)
     # print(maximization_iteration_zeroes(M))
     print(rmse(ratings,samples))
